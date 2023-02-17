@@ -9,8 +9,8 @@ module.exports = merge(base, {
   mode: 'production',
   devtool: 'source-map',
   output: {
-    path: path.resolve(__dirname, '../docs'),
-    publicPath: '/SourceDAO/'
+    path: path.resolve(__dirname, '../../docs'),
+    publicPath: '/riddle_board/'
   },
   plugins: [
     new MiniCssExtractPlugin({
