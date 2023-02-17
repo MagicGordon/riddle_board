@@ -56,7 +56,7 @@ fn process_add(lvalue: u64, rvalue: u64, commitment: u64){
     let verifying_key_vec: Vec<&str> = verifying_key_string.strip_prefix("[").unwrap().strip_suffix("]").unwrap().split(", ").collect();
     println!("");
     println!("verifying_key:");
-    println!("{:?}", verifying_key_vec.join(""));
+    println!("0x{}", verifying_key_vec.join(""));
     println!("Creating proofs...");
 
     let commitment = Fr::from(commitment);
@@ -73,7 +73,7 @@ fn process_add(lvalue: u64, rvalue: u64, commitment: u64){
     println!("");
     println!("proof:");
     let proof_vec: Vec<&str> = proof_string.strip_prefix("[").unwrap().strip_suffix("]").unwrap().split(", ").collect();
-    println!("{:?}", proof_vec.join(""));
+    println!("0x{}", proof_vec.join(""));
 
     let mut commitment_bytes = vec![];
     commitment.serialize(&mut commitment_bytes).unwrap();
@@ -81,7 +81,7 @@ fn process_add(lvalue: u64, rvalue: u64, commitment: u64){
     let commitment_vec: Vec<&str> = commitment_string.strip_prefix("[").unwrap().strip_suffix("]").unwrap().split(", ").collect();
     println!("");
     println!("commitment:");
-    println!("{:?}", commitment_vec.join(""));
+    println!("0x{}", commitment_vec.join(""));
     assert!(verify_proof(&pvk, &proof, &[commitment]).unwrap());
 }
 
@@ -105,7 +105,7 @@ fn process_mul(lvalue: u64, rvalue: u64, commitment: u64){
     let verifying_key_vec: Vec<&str> = verifying_key_string.strip_prefix("[").unwrap().strip_suffix("]").unwrap().split(", ").collect();
     println!("");
     println!("verifying_key:");
-    println!("{:?}", verifying_key_vec.join(""));
+    println!("0x{}", verifying_key_vec.join(""));
     println!("Creating proofs...");
 
     let commitment = Fr::from(commitment);
@@ -122,7 +122,7 @@ fn process_mul(lvalue: u64, rvalue: u64, commitment: u64){
     println!("");
     println!("proof:");
     let proof_vec: Vec<&str> = proof_string.strip_prefix("[").unwrap().strip_suffix("]").unwrap().split(", ").collect();
-    println!("{:?}", proof_vec.join(""));
+    println!("0x{}", proof_vec.join(""));
 
     let mut commitment_bytes = vec![];
     commitment.serialize(&mut commitment_bytes).unwrap();
@@ -130,6 +130,6 @@ fn process_mul(lvalue: u64, rvalue: u64, commitment: u64){
     let commitment_vec: Vec<&str> = commitment_string.strip_prefix("[").unwrap().strip_suffix("]").unwrap().split(", ").collect();
     println!("");
     println!("commitment:");
-    println!("{:?}", commitment_vec.join(""));
+    println!("0x{}", commitment_vec.join(""));
     assert!(verify_proof(&pvk, &proof, &[commitment]).unwrap());
 }
