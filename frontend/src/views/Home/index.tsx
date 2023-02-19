@@ -33,7 +33,7 @@ export default (): JSX.Element => {
     setTable([])
     const results: any[] = []
     const objects = await provider.getObject(
-      '0xdf04d8d2097409ae5f6d4d736777f66f937ba228'
+      '0xf1688346fd98644429bd8f333e8051ef65c08ef3'
     )
     if (objects.status === 'NotExists') {
       setSeverity('error')
@@ -53,11 +53,11 @@ export default (): JSX.Element => {
     const result = await signAndExecuteTransaction({
       kind: 'moveCall',
       data: {
-        packageObjectId: '0x930c1261bb6d5f035348097f2515b03071b42b52',
+        packageObjectId: '0x4e29620d87a333db72594e033e2d64beaf35f9e4',
         module: 'board',
         function: 'answer',
         typeArguments: [],
-        arguments: ['0xdf04d8d2097409ae5f6d4d736777f66f937ba228', key, text],
+        arguments: ['0xf1688346fd98644429bd8f333e8051ef65c08ef3', key, text],
         gasBudget: 10000,
       },
     })
@@ -97,12 +97,12 @@ export default (): JSX.Element => {
     const result = await signAndExecuteTransaction({
       kind: 'moveCall',
       data: {
-        packageObjectId: '0x930c1261bb6d5f035348097f2515b03071b42b52',
+        packageObjectId: '0x4e29620d87a333db72594e033e2d64beaf35f9e4',
         module: 'board',
         function: 'add_riddle',
         typeArguments: [],
         arguments: [
-          '0xdf04d8d2097409ae5f6d4d736777f66f937ba228',
+          '0xf1688346fd98644429bd8f333e8051ef65c08ef3',
           commitment,
           consumption,
         ],
